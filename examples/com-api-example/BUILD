@@ -20,8 +20,8 @@ rust_binary(
     features = ["link_std_cpp_lib"],
     visibility = ["//visibility:public"],
     deps = [
-        "//score/mw/com/example/com-api-example/com-api-gen",
-        "//score/mw/com/impl/rust/com-api/com-api",
+        "//com-api-example/com-api-gen",
+        "@score_communication//score/mw/com/impl/rust/com-api/com-api",
         "@score_communication_crate_index//:clap",
     ],
 )

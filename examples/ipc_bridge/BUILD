@@ -27,9 +27,9 @@ cc_binary(
     visibility = ["//examples:__pkg__"],
     deps = [
         ":sample_sender_receiver",
-        "//score/mw/com",
         "@boost.program_options",
         "@score_baselibs//score/language/futurecpp",
+        "@score_communication//score/mw/com",
         "@score_logging//score/mw/log",
     ],
 )
@@ -45,8 +45,7 @@ cc_library(
     features = COMPILER_WARNING_FEATURES,
     deps = [
         ":datatype",
-        "//score/mw/com",
-        "@score_logging//score/mw/log",
+        "@score_communication//score/mw/com",
     ],
 )
 
@@ -60,8 +59,8 @@ cc_library(
     ],
     features = COMPILER_WARNING_FEATURES,
     deps = [
-        "//score/mw/com",
         "@score_baselibs//score/language/futurecpp",
+        "@score_communication//score/mw/com",
     ],
 )
 
@@ -69,11 +68,11 @@ rust_library(
     name = "ipc_bridge_gen_rs",
     srcs = ["ipc_bridge_gen.rs"],
     visibility = [
-        "//score/mw/com:__subpackages__",
+        "@score_communication//score/mw/com:__subpackages__",
     ],
     deps = [
         ":ipc_bridge_gen_cpp",
-        "//score/mw/com/impl/rust:mw_com",
+        "@score_communication//score/mw/com/impl/rust:mw_com",
         "@score_communication_crate_index//:libc",
     ],
 )
@@ -86,7 +85,7 @@ rust_binary(
     visibility = ["//examples:__pkg__"],
     deps = [
         ":ipc_bridge_gen_rs",
-        "//score/mw/com/impl/rust:mw_com",
+        "@score_communication//score/mw/com/impl/rust:mw_com",
         "@score_communication_crate_index//:clap",
         "@score_communication_crate_index//:futures",
     ],
@@ -98,7 +97,7 @@ cc_library(
     features = COMPILER_WARNING_FEATURES,
     implementation_deps = [
         ":datatype",
-        "//score/mw/com/impl/rust:bridge_macros",
+        "@score_communication//score/mw/com/impl/rust:bridge_macros",
     ],
 )
 

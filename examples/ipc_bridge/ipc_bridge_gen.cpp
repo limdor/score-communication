@@ -10,7 +10,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
-#include "score/mw/com/example/ipc_bridge/datatype.h"
+#include "ipc_bridge/datatype.h"
 #include "score/mw/com/impl/rust/bridge_macros.h"
 
 BEGIN_EXPORT_MW_COM_INTERFACE(mw_com_IpcBridge, ::score::mw::com::IpcBridgeProxy, ::score::mw::com::IpcBridgeSkeleton)

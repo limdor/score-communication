@@ -18,6 +18,8 @@ common --http_connector_attempts=10
 common --http_connector_retry_max_timeout=1s
 common --http_timeout_scaling=2.0
 
+common --deleted_packages=examples/com-api-example
+common --deleted_packages=examples/ipc_bridge
 
 common --@score_baselibs//score/json:base_library=nlohmann
 common --@score_baselibs//score/memory/shared/flags:use_typedshmd=False

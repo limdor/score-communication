@@ -21,11 +21,11 @@ rust_library(
     crate_name = "com_api_gen",
     features = ["link_std_cpp_lib"],
     visibility = [
-        "//score/mw/com:__subpackages__",
+        "@score_communication//score/mw/com:__subpackages__",
     ],
     deps = [
         ":vehicle_gen_cpp",
-        "//score/mw/com/impl/rust/com-api/com-api",
+        "@score_communication//score/mw/com/impl/rust/com-api/com-api",
     ],
 )
 
@@ -35,7 +35,7 @@ cc_library(
     hdrs = ["vehicle_gen.h"],
     features = COMPILER_WARNING_FEATURES,
     implementation_deps = [
-        "//score/mw/com/impl/rust/com-api/com-api-ffi-lola:registry_bridge_macro_cpp",
+        "@score_communication//score/mw/com/impl/rust/com-api/com-api-ffi-lola:registry_bridge_macro_cpp",
     ],
     alwayslink = True,
 )

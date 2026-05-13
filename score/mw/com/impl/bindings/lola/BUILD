@@ -1271,6 +1271,8 @@ cc_gtest_unit_test(
     features = COMPILER_WARNING_FEATURES,
     deps = [
         ":runtime",
+        # TODO: Why the mock is not enough?
+        "@score_baselibs//score/analysis/tracing/generic_trace_library:implementation",
         "@score_baselibs//score/os/mocklib:unistd_mock",
     ],
 )
@@ -1452,6 +1454,8 @@ cc_gtest_unit_test(
     features = COMPILER_WARNING_FEATURES,
     deps = [
         ":runtime",
+        # TODO: Why the mock is not enough?
+        "@score_baselibs//score/analysis/tracing/generic_trace_library:implementation",
         "@score_baselibs//score/os/mocklib:unistd_mock",
     ],
 )
